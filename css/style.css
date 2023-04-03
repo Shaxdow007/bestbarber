@@ -525,7 +525,7 @@ footer {
   background-color: #014125;
   padding: 15px 18px;
   border-radius: 100%;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 }
 .scroll:hover {
   background-color: #065734;
@@ -534,3 +534,39 @@ footer {
   bottom: 50px;
 }
 /* scroll to the top close */
+/* loding page */
+.load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1b1717;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.load-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.load::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border: 5px solid #01311c;
+  border-top-color: #00ff8c;
+  border-radius: 50%;
+  animation: load 0.8s infinite ease;
+}
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* loding page close */
