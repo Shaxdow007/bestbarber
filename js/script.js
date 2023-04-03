@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
 // header fixed in scroll
 const header = document.querySelector("header");
 window.addEventListener("scroll", () => {
-  header.classList.toggle("sticky", window.scrollY > 80);
+  header.classList.toggle("sticky", window.scrollY > 20);
 });
 
 // arrow top
@@ -23,5 +23,15 @@ up.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
+  });
+});
+
+// loading page
+window.addEventListener("load", () => {
+  const load = document.querySelector(".load");
+  load.classList.add("load-hide");
+  // when the transition end we will remove the loader
+  window.addEventListener("transitionend", () => {
+    document.body.removeChild("load");
   });
 });
